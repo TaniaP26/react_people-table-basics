@@ -10,6 +10,7 @@ import { Loader } from './components/Loader';
 import { useEffect, useState } from 'react';
 import { getPeople } from './api';
 import { Person } from './types/Person';
+import { PeopleTable } from './components/Loader/PeopleTable';
 
 import './App.scss';
 
@@ -54,7 +55,8 @@ export const PeoplePage = () => {
     <>
       <h1 className="title">People Page</h1>
 
-      <table
+      <PeopleTable people={people} selectedSlug={slug} />
+      {/* <table
         data-cy="peopleTable"
         className="table is-striped is-hoverable is-narrow is-fullwidth"
       >
@@ -127,7 +129,7 @@ export const PeoplePage = () => {
             );
           })}
         </tbody>
-      </table>
+      </table> */}
     </>
   );
 };
